@@ -13,13 +13,11 @@
         position: fixed;
         height: 100%;
         width: 100%;
-        background-color: black;
         margin-top: 0px;
       }
     
       #aboutText{
-        color: white;
-        background-color: black;
+        color: black;
         margin-top: 25px;
         margin-bottom: 25px;
         margin-left: 25px;
@@ -63,11 +61,14 @@
     
        /* Navbar container */
     .navbar {
+      padding: 10px 20px;
+      text-justify: auto;
       font-size: 24px;
       color: white;
-      font-weight: 500;
+      font-weight: 300;
       text-align: center;
-      overflow: hidden;
+      justify-content: center;
+      overflow: visible;
       background-color: #333;
       z-index: 2;
       width: 100%;
@@ -76,14 +77,16 @@
     
     /* Links inside the navbar */
     .navbar a {
+      
       float: right;
       font-size: 16px;
       font-weight: 300;
       color: white;
       text-align: center;
-      padding: 14px 16px;
+      padding: 8px 10px;
       text-decoration: none;
       z-index: 2;
+      translate: -50%;
     }
     
     /* The dropdown container */
@@ -151,9 +154,9 @@
     
     .flex-item-left {
       padding: 10px;
-      flex: 10%;
-      margin-top: 50px;
-      margin-left: 5%;
+      flex: 12%;
+      margin-top: 30px;
+      margin-left: 3%;
       text-align: left;
       font-size: 24px;
     }
@@ -193,7 +196,14 @@
     .thumbnails {
       font-size: 17px;
       text-align: center;
+    }
 
+    .thumbnailsOutline {
+      font-size: 17px;
+      text-align: center;
+      border-width: 10px;
+      border-style: solid;
+      border-color: aqua;
     }
 
     .thumbnails > img{
@@ -201,6 +211,7 @@
     }
 
     .displayImages {
+      position: fixed;
       justify-content: center;
       overflow: hidden;
      
@@ -209,8 +220,10 @@
     img {
       max-width: 80%;
       max-height: 90%;
-      border: 0px;
       border-radius: 0px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: white;
     }
 
     iframe {
@@ -218,6 +231,7 @@
       position: absolute;
       min-width: 70% ;
       min-height: 70% ;
+      display: contents;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -231,14 +245,14 @@
     }
 
     .button {
-      background-color: #00ec37; 
+      background-color: lime; 
       border: none;
       color: white;
-      padding: 15px 32px;
+      padding: 10px 20px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
+      font-size: 17px;
       margin: 4px 2px;
       cursor: pointer;
     }
@@ -246,18 +260,20 @@
     .button1 {
       background-color: white; 
       color: black; 
-      border: 2px solid #00ec37; /* Datavis */
+      border: 2px solid lime; /* Datavis */
     }
 
-    .button1:hover {background-color: #00ec37;}
+    .button1:hover {background-color: lime;}
+    .button1:active, .button1.active {background-color: lime;}
     
     .button2 {
       background-color: white; 
       color: black; 
-      border: 2px solid #ff00bb; /* designstudio */
+      border: 2px solid #ff00f7; /* designstudio */
     }
 
-    .button2:hover {background-color: #ff00bb;}
+    .button2:hover {background-color: #ff00f7;}
+    .button2:active, .button2.active {background-color: #ff00f7;}   
     
     .button3 {
       background-color: white; 
@@ -266,14 +282,16 @@
     }
 
     .button3:hover {background-color: #bfff00;}    
+    .button3:active, .button3.active {background-color: #bfff00;}    
     
     .button4 {
       background-color: white;
       color: black;
-      border: 2px solid #00e1ff; /* animation */
+      border: 2px solid aqua; /* animation */
     }
 
-    .button4:hover {background-color: #00e1ff;}        
+    .button4:hover {background-color: aqua;} 
+    .button4:active, .button4.active {background-color: aqua;}         
     
     .button5 {
       background-color: white;
@@ -282,6 +300,7 @@
     }
 
     .button5:hover {background-color: #ff6a00;}
+    .button5:active, .button5.active {background-color: #ff6a00;}  
 
     .button6 {
       background-color: white;
@@ -290,4 +309,16 @@
     }
 
     .button6:hover {background-color: #d000ff;}
+    .button6:active, .button6.active {background-color: #d000ff;}  
+
+    .fullSize{
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    img{
+      max-width: 100%;
+    }
 

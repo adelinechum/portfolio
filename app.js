@@ -14,34 +14,7 @@ frames.forEach(element => {
   
 });
 
-// document.getElementsByClassName("button1")[0].addEventListener("click", highlight, false)
-
 Array.from(document.getElementsByClassName("button")).forEach(e => e.addEventListener("click", highlight, false))
-
-
-
-
-
-// $(window).click(function() {
-
-//   Array.from(document.getElementsByClassName("displayImages")).forEach(function (e) {
-//     e.style.display = 'none';
-// });
-// })
-
-// $('thumbnails').click(function(event){
-//   event.stopPropagation();
-// });
-
-
-
-//document.querySelector("thumbnails").addEventListener("click", openView, false)
- //document.getElementById("Gaslink").addEventListener("click", openView, false)
-// document.getElementById("03").addEventListener("click", openView, false)
-// document.getElementById("04").addEventListener("click", openView, false)
-// document.getElementById("05").addEventListener("click", openView, false)
-// document.getElementById("06").addEventListener("click", openView, false)
-// document.getElementById("07").addEventListener("click", openView, false)
 
 function openView (parameter) {
 
@@ -57,7 +30,7 @@ function openView (parameter) {
         break;
   
       case "Flatten": 
-            var image = document.getElementById("GaslinkLink");
+            var image = document.getElementById("FlattenLink");
             image.style.display = 'flex';
 
       break;
@@ -68,24 +41,72 @@ function openView (parameter) {
   
       break;
   
-      case "04":
+      case "SafeSpace":
+        var image = document.getElementById("SafeSpaceLink");
+        image.style.display = 'flex';    
 
       break;
   
-      case "05":
+      case "Housing":
+        var image = document.getElementById("HousingLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "Furniture":
+        var image = document.getElementById("FurnitureLink");
+        image.style.display = 'flex';    
 
       break;
   
-      case "06":
+      case "Care":
+        var image = document.getElementById("CareLink");
+        image.style.display = 'flex';    
 
       break;
-  
-      case "07":
+
+      case "Quilted":
+        var image = document.getElementById("QuiltedLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "Pillow":
+        var image = document.getElementById("PillowLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "SteroidPlants":
+        var image = document.getElementById("SteroidPlantsLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "MoMa":
+        var image = document.getElementById("MoMaLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "Refactoring":
+        var image = document.getElementById("RefactoringLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "Desert":
+        var image = document.getElementById("DesertLink");
+        image.style.display = 'flex';    
+
+      break;
+
+      case "Wetlands":
+        var image = document.getElementById("WetlandsLink");
+        image.style.display = 'flex';    
 
       break;
     
-      default:  
-        break;
     }
   }
 
@@ -100,13 +121,14 @@ function openView (parameter) {
 
 
 function unhighlightAll() {
-  $('.highlightDatavis').css("background-color" , "white");
-  $('.highlightDesign').css("background-color" , "white");
-  $('.highlightModelmaking').css("background-color" , "white");
-  $('.highlightAnimation').css("background-color" , "white");
-  $('.highlightExhibit').css("background-color" , "white");
-  $('.highlightDoc').css("background-color" , "white");
+  $('.highlightDatavis').css("border-color" , "white");
+  $('.highlightDesign').css("border-color" , "white");
+  $('.highlightModelmaking').css("border-color" , "white");
+  $('.highlightAnimation').css("border-color" , "white");
+  $('.highlightExhibit').css("border-color" , "white");
+  // $('.highlightDoc').css("background-color" , "white");
 }
+
 
 function highlight(e) {
   const key = e.target.id;
@@ -114,30 +136,43 @@ function highlight(e) {
   unhighlightAll();
   switch (key) {
     case 'datavis':
-      $('.highlightDatavis').css("background-color" , "#00ec37");
+      $('.highlightDatavis').css("border-color" , "lime");
       break;
 
     case 'designstudio':
-      $('.highlightDesign').css("background-color" , "#ff00bb");
+      $('.highlightDesign').css("border-color" , "#ff00f7");
       break;
 
     case 'modelmaking':
-      $('.highlightModelmaking').css("background-color" , "#bfff00");
+      $('.highlightModelmaking').css("border-color" , "#bfff00");
       break;
   
     case 'animation':
-      $('.highlightAnimation').css("background-color" , "#00e1ff");
+      $('.highlightAnimation').css("border-color" , "aqua");
       break;
 
     case 'exhibit':
-      $('.highlightExhibit').css("background-color" , "#ff6a00");
+      $('.highlightExhibit').css("border-color" , "#ff6a00");
       break;
     
     case 'doc':
-      $('.highlightDoc').css("background-color" , "#d000ff");
+      $('.highlightDoc').css("border-color" , "#d000ff");
       break;
 
     default:
       break;
   }
 }
+
+
+$('.button').on("click", function() {
+  $('.button').not(this).removeClass('active');
+  $(this).toggleClass('active');
+})
+
+// $('.button').click(function() {
+
+//   $("*").toggleClass('')
+//   $(this).toggleClass('active');
+
+// });
