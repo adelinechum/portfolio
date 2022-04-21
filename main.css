@@ -24,7 +24,6 @@
         margin-bottom: 25px;
         margin-left: 25px;
         margin-right: 25px;
-        font-family: 'Roboto', sans-serif;
       }
     
       /* Add a black background color to the top navigation */
@@ -45,7 +44,6 @@
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
-        font-family: 'Roboto', sans-serif;
         z-index: 1000;
       }
     
@@ -68,12 +66,9 @@
       font-size: 24px;
       color: white;
       font-weight: 500;
-      text-indent: 5%;
-      text-justify: center;
+      text-align: center;
       overflow: hidden;
       background-color: #333;
-      font-family: Arial;
-      position: absolute;
       z-index: 2;
       width: 100%;
       position: fixed;
@@ -155,7 +150,6 @@
     }
     
     .flex-item-left {
-      background-color: gray;
       padding: 10px;
       flex: 10%;
       margin-top: 50px;
@@ -172,7 +166,6 @@
     }
     
     .flex-item-right {
-      background-color: gray;
       padding: 10px;
       flex: 15%;
       margin-top: 50px;
@@ -200,13 +193,17 @@
     .thumbnails {
       font-size: 17px;
       text-align: center;
+
+    }
+
+    .thumbnails > img{
+      cursor: pointer;
     }
 
     .displayImages {
       justify-content: center;
       overflow: hidden;
-      border: 10px #333;
-
+     
     }
     
     img {
@@ -217,11 +214,10 @@
     }
 
     iframe {
-      background-color: #ddd;
       margin-top: auto;
       position: absolute;
-      min-width: 70%;
-      min-height: 70%;
+      min-width: 70% ;
+      min-height: 70% ;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -230,5 +226,68 @@
       box-sizing: inherit;
       opacity: 100%;
       background: white;
+      outline-color: #333;
+      outline-style: solid;
     }
-      
+
+    .button {
+      background-color: #00ec37; 
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #00ec37; /* Datavis */
+    }
+
+    .button1:hover {background-color: #00ec37;}
+    
+    .button2 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #ff00bb; /* designstudio */
+    }
+
+    .button2:hover {background-color: #ff00bb;}
+    
+    .button3 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #bfff00; /* modelmaking */
+    }
+
+    .button3:hover {background-color: #bfff00;}    
+    
+    .button4 {
+      background-color: white;
+      color: black;
+      border: 2px solid #00e1ff; /* animation */
+    }
+
+    .button4:hover {background-color: #00e1ff;}        
+    
+    .button5 {
+      background-color: white;
+      color: black;
+      border: 2px solid #ff6a00; /* exhibit */
+    }
+
+    .button5:hover {background-color: #ff6a00;}
+
+    .button6 {
+      background-color: white;
+      color: black;
+      border: 2px solid #d000ff; /* doc */
+    }
+
+    .button6:hover {background-color: #d000ff;}
+
