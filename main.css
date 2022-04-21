@@ -9,20 +9,6 @@
         font-family: 'Roboto', sans-serif;
       }
     
-      /* style the three.js container however your want */
-      #container {
-        z-index: 0;
-        position:absolute;
-        top:0; 
-        left:0;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        display: flex;
-        margin: auto;
-        justify-content: center;
-      }
-    
       #aboutPage {
         position: fixed;
         height: 100%;
@@ -39,21 +25,6 @@
         margin-left: 25px;
         margin-right: 25px;
         font-family: 'Roboto', sans-serif;
-      }
-    
-      /* removes outline when clicking on three.js canvas */
-      canvas:focus {
-        outline: none;
-      }
-    
-      /* the style of the progress text */
-      #progress {
-        position: absolute;
-        top: 0;
-        margin: 6px;
-        color: white;
-        font-family: 'Roboto', sans-serif;
-        z-index: 2000;
       }
     
       /* Add a black background color to the top navigation */
@@ -91,9 +62,13 @@
         z-index: 2;
       }
     
-    
        /* Navbar container */
     .navbar {
+      font-size: 24px;
+      color: white;
+      font-weight: 500;
+      text-indent: 5%;
+      text-justify: center;
       overflow: hidden;
       background-color: #333;
       font-family: Arial;
@@ -104,20 +79,18 @@
     
     /* Links inside the navbar */
     .navbar a {
-      float: left;
+      float: right;
       font-size: 16px;
+      font-weight: 300;
       color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
       z-index: 2;
-    
-    
     }
     
     /* The dropdown container */
     .dropdown {
-    
       float: left;
       overflow: hidden;
     }
@@ -170,5 +143,52 @@
       display: block;
       z-index: 2;
     } 
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 30px;
+      flex-direction: row;
+      margin-top: auto;
+    }
     
+    .flex-item-left {
+      background-color: gray;
+      padding: 10px;
+      flex: 15%;
+      margin-top: 50px;
+      margin-left: 5%;
+      text-align: left;
+    }
+    .flex-item-center {
+      background-color: white;
+      padding: 10px;
+      flex: 50%;
+      margin-top: 50px;
+    }
     
+    .flex-item-right {
+      background-color: gray;
+      padding: 10px;
+      flex: 20%;
+      margin-top: 50px;
+    }
+    
+    /* Responsive layout - makes a one column-layout instead of a two-column layout */
+    @media (max-width: 800px) {
+      .flex-item-left, .flex-item-center {
+        flex: 100%;
+      }
+    }
+
+    .flex-item-right {
+      background-color: gray;
+      padding: 10px;
+      flex: 20%;
+      margin-top: 50px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto ;
+    }
