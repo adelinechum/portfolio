@@ -147,6 +147,12 @@ function unhighlightAll() {
   $('.highlightAnimation').css("border-color" , "white");
   $('.highlightExhibit').css("border-color" , "white");
   // $('.highlightDoc').css("background-color" , "white");
+  $('.highlightDatavis').css("opacity" , "100%");
+  $('.highlightDesign').css("opacity" , "100%");
+  $('.highlightModelmaking').css("opacity" , "100%");
+  $('.highlightAnimation').css("opacity" , "100%");
+  $('.highlightExhibit').css("opacity" , "100%");
+  $('.highlightViz').css("opacity" , "100%");
 }
 
 
@@ -157,27 +163,64 @@ function highlight(e) {
   switch (key) {
     case 'datavis':
       $('.highlightDatavis').css("border-color" , "lime");
+      $('.highlightDesign').css("opacity" , "60%");
+      $('.highlightModelmaking').css("opacity" , "60%");
+      $('.highlightAnimation').css("opacity" , "60%");
+      $('.highlightExhibit').css("opacity" , "60%");
+      $('.highlightViz').css("opacity" , "60%");
+      $('.highlightDatavis').css("opacity" , "100%");
       break;
 
     case 'designstudio':
       $('.highlightDesign').css("border-color" , "#ff00f7");
+      $('.highlightModelmaking').css("opacity" , "60%");
+      $('.highlightAnimation').css("opacity" , "60%");
+      $('.highlightExhibit').css("opacity" , "60%");
+      $('.highlightViz').css("opacity" , "60%");
+      $('.highlightDatavis').css("opacity" , "60%");
+      $('.highlightDesign').css("opacity" , "100%");
       break;
 
     case 'modelmaking':
       $('.highlightModelmaking').css("border-color" , "#bfff00");
+      $('.highlightAnimation').css("opacity" , "60%");
+      $('.highlightExhibit').css("opacity" , "60%");
+      $('.highlightViz').css("opacity" , "60%");
+      $('.highlightDatavis').css("opacity" , "60%");
+      $('.highlightDesign').css("opacity" , "60%");
+      $('.highlightModelmaking').css("opacity" , "100%");
       break;
   
     case 'animation':
       $('.highlightAnimation').css("border-color" , "aqua");
+      $('.highlightExhibit').css("opacity" , "60%");
+      $('.highlightViz').css("opacity" , "60%");
+      $('.highlightDatavis').css("opacity" , "60%");
+      $('.highlightDesign').css("opacity" , "60%");
+      $('.highlightModelmaking').css("opacity" , "60%");
+      $('.highlightAnimation').css("opacity" , "100%");
       break;
 
     case 'exhibit':
       $('.highlightExhibit').css("border-color" , "#ff6a00");
+
+      $('.highlightViz').css("opacity" , "60%");
+      $('.highlightDatavis').css("opacity" , "60%");
+      $('.highlightDesign').css("opacity" , "60%");
+      $('.highlightModelmaking').css("opacity" , "60%");
+      $('.highlightAnimation').css("opacity" , "60%");
+      $('.highlightExhibit').css("opacity" , "100%");
       break;
     
-    case 'doc':
-      $('.highlightDoc').css("border-color" , "#d000ff");
-      break;
+    // case 'doc':
+    //   $('.highlightDoc').css("border-color" , "#d000ff");
+    //   $('.highlightViz').css("opacity" , "60%");
+    //   $('.highlightDatavis').css("opacity" , "60%");
+    //   $('.highlightDesign').css("opacity" , "60%");
+    //   $('.highlightModelmaking').css("opacity" , "60%");
+    //   $('.highlightAnimation').css("opacity" , "60%");
+    //   $('.highlightExhibit').css("opacity" , "100%");
+    //   break;
 
     default:
       break;

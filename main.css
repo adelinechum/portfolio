@@ -216,6 +216,7 @@
       border-width: 10px;
       border-style: solid;
       border-color: white;
+      opacity: 100%;
     }
 
     iframe {
