@@ -64,63 +64,63 @@ function openView (parameter) {
 
       case "Furniture":
         // var image = document.getElementById("FurnitureLink");
-        $('<iframe id= "FurnitureLink" class="displayImages" src="./Furniture.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "FurnitureLink" class="displayImages" src="./Furniture.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body'); 
 
       break;
   
       case "Care":
         // var image = document.getElementById("CareLink");
-        $('<iframe id= "CareLink" class="displayImages" src="./Care.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "CareLink" class="displayImages" src="./Care.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');
 
       break;
 
       case "Quilted":
         // var image = document.getElementById("QuiltedLink");
-        $('<iframe id= "QuiltedLink" class="displayImages" src="./Quilt.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "QuiltedLink" class="displayImages" src="./Quilt.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');    
 
       break;
 
       case "Pillow":
         // var image = document.getElementById("PillowLink");
-        $('<iframe id= "PillowLink" class="displayImages" src="./Pillow.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "PillowLink" class="displayImages" src="./Pillow.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');    
 
       break;
 
       case "SteroidPlants":
         // var image = document.getElementById("SteroidPlantsLink");
-        $('<iframe id= "SteroidPlantsLink" class="displayImages" src="./SteroidPlants.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "SteroidPlantsLink" class="displayImages" src="./SteroidPlants.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');    
 
       break;
 
       case "MoMa":
         // var image = document.getElementById("MoMaLink");
-        $('<iframe id= "MoMaLink" class="displayImages" src="./Moma.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "MoMaLink" class="displayImages" src="./Moma.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');    
 
       break;
 
       case "Refactoring":
         // var image = document.getElementById("RefactoringLink");
-        $('<iframe id= "RefactoringLink" class="displayImages" src="./Refactoring.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "RefactoringLink" class="displayImages" src="./Refactoring.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');   
 
       break;
 
       case "Desert":
         // var image = document.getElementById("DesertLink");
-        $('<iframe id= "DesertLink" class="displayImages" src="./Desert.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "DesertLink" class="displayImages" src="./Desert.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');   
 
       break;
 
       case "Wetlands":
         // var image = document.getElementById("WetlandsLink");
-        $('<iframe id= "WetlandsLink" class="displayImages" src="./Wetlands.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        $('<iframe id= "WetlandsLink" class="displayImages" src="./Wetlands.html"  allowtransparency="false" style="display: flex;" ></iframe>')
         .appendTo('body');    
 
       break;
