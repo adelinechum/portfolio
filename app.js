@@ -4,7 +4,7 @@ script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 
 
-console.log(document.getElementsByClassName("thumbnails"));
+//console.log(document.getElementsByClassName("thumbnails"));
 
 const frames = Array.from(document.getElementsByClassName("thumbnails"));
 
@@ -19,91 +19,109 @@ Array.from(document.getElementsByClassName("button")).forEach(e => e.addEventLis
 function openView (parameter) {
 
     var viewID = parameter.target.id
-    console.log(parameter.target.id);
+    //console.log(parameter.target.id);
 
     switch (viewID) {
 
-      case "Gaslink": 
-            var image = document.getElementById("GaslinkLink");
-            image.style.display = 'flex';
+      // case "Gaslink": 
+      //       var image = document.getElementById("GaslinkLink");
+      //       $('iframe').append();
+      //       //image.style.display = 'flex';
                 
-        break;
+      //   break;
   
       case "Flatten": 
             var image = document.getElementById("FlattenLink");
-            image.style.display = 'flex';
+            $('<iframe id= "FlattenLink" class="displayImages" src="https://centerforspatialresearch.github.io/summer2020_covidpolicies/"  allowtransparency="false" style="display: flex;" ></iframe>')
+            .appendTo('body');
+            //image.style.display = 'flex';
 
       break;
   
       case "Paradise":    
             var image = document.getElementById("ParadiseLink");
-            image.style.display = 'flex';          
+            $('<iframe id= "ParadiseLink" class="displayImages" src="https://adelinechum.github.io/rebuildingParadiseInterface/"  allowtransparency="false" style="display: flex;" ></iframe>')
+            .appendTo('body');
+            //image.style.display = 'flex';          
   
       break;
   
       case "SafeSpace":
         var image = document.getElementById("SafeSpaceLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "SafeSpaceLink" class="displayImages" src="./SafeSpace.html"  allowtransparency="false" style="display: flex;" ></iframe>')
+        .appendTo('body');
+        //image.style.display = 'flex';    
 
       break;
   
       case "Housing":
         var image = document.getElementById("HousingLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "HousingLink" class="displayImages" src="https://adelinechum.github.io/36YearsOfHousing/"  allowtransparency="false" style="display: flex;" ></iframe>')
+        .appendTo('body');
+          
 
       break;
 
       case "Furniture":
         var image = document.getElementById("FurnitureLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "FurnitureLink" class="displayImages" src="./Furniture.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body'); 
 
       break;
   
       case "Care":
         var image = document.getElementById("CareLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "CareLink" class="displayImages" src="./Care.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');
 
       break;
 
       case "Quilted":
         var image = document.getElementById("QuiltedLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "QuiltedLink" class="displayImages" src="./Quilt.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');    
 
       break;
 
       case "Pillow":
         var image = document.getElementById("PillowLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "PillowLink" class="displayImages" src="./Pillow.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');    
 
       break;
 
       case "SteroidPlants":
         var image = document.getElementById("SteroidPlantsLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "SteroidPlantsLink" class="displayImages" src="./SteroidPlants.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');    
 
       break;
 
       case "MoMa":
         var image = document.getElementById("MoMaLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "MoMaLink" class="displayImages" src="./Moma.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');    
 
       break;
 
       case "Refactoring":
         var image = document.getElementById("RefactoringLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "RefactoringLink" class="displayImages" src="./Refactoring.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');   
 
       break;
 
       case "Desert":
         var image = document.getElementById("DesertLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "DesertLink" class="displayImages" src="./Desert.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');   
 
       break;
 
       case "Wetlands":
         var image = document.getElementById("WetlandsLink");
-        image.style.display = 'flex';    
+        $('<iframe id= "WetlandsLink" class="displayImages" src="./Wetlands.html"  allowtransparency="false" style="display: none;" ></iframe>')
+        .appendTo('body');    
 
       break;
     
@@ -113,9 +131,11 @@ function openView (parameter) {
     //escape image
     document.body.addEventListener( 'keydown', function (e) { 
       if (e.key == "Escape") {
-        Array.from(document.getElementsByClassName("displayImages")).forEach(function (e) {
-          e.style.display = 'none';
-        })
+        $('iframe').remove()
+       // console.log(document.getElementsByClassName("displayImages"))
+        // Array.from(document.getElementsByClassName("displayImages")).forEach(function (e) {
+        //   // e.style.display = 'none';
+        // })
       }
     } );
 
@@ -132,7 +152,7 @@ function unhighlightAll() {
 
 function highlight(e) {
   const key = e.target.id;
-  console.log(e.target);
+  //console.log(e.target);
   unhighlightAll();
   switch (key) {
     case 'datavis':
