@@ -16,64 +16,87 @@
     </script>
 
     <div class="navbar">
-             ADELINE CHUM: SELECTED WORK
-		<a href="./about.html">About</a>
-        <a href="./index.html">Projects</a>
-    </div>
-
+             ADELINE CHUM
+		<a href="./about.html">INFO</a>
+        <a href="./index.html">WORK</a>
+    <!-- </div> -->
+     <br>
+<!-- 
     <div class="flex-container">
 
         <div class="flex-item-left">
-             </br></br>
+             </br></br> -->
 
-            THEMES:</br>
+            <!-- THEMES:</br> -->
+            <div style="font-style: italic; font-size: 17px; font-weight: 200;">
+
+                Now viewing:
+            
+            </div>
+
+            <button id="all" class="button button0">
+                All
+            </button>
 
             <button id="datavis" class="button button1">
                 Data Visualization
-            </button></br>
+            </button>
 
             <button id="designstudio" class="button button2">
-                Design Studio
-            </button></br>
+                Design
+            </button>
 
             <button id="modelmaking" class="button button3">
-                Model Making
-            </button></br>
+                Models
+            </button>
 
             <button id="animation" class="button button4">
                 Animation
-            </button></br>
+            </button>
 
             <button id="exhibit" class="button button5">
-                Exhibition Work
-            </button></br>
+                Exhibits
+            </button>
+
+            <button id="pattern" class="button button6">
+                Patterns
+            </button>
 <!-- 
             <button id="docu" class="button button6">
                 Documentation
             </button> -->
-        </br></br>
-
-            <div style="font-style: italic; font-size: 17px; font-weight: 200;">
-
-                Click on project images to view </br></br>
-
-                Press Esc to close view
-            
-            </div>
+        </br>
 
         </div>
 
 
         <div class="flex-item-center">
             <div class="grid-container">
+            
+                <section id="float-layer">
+                <!-- move your .thumbnails into here, and add data-id on each -->
+                <div class="thumbnails frame" data-id="Paradise" style="left:20px; top:20px;" class="highlightDesign highlightDatavis highlightAnimation">
+                    <img src="./assets/InterfaceImage.gif" alt="Rebuilding Paradise" id ="Paradise">
+                    <div class="caption">
+                    <div class="title">Rebuilding Paradise</div>
+                    <div class="tags">Design Studio · Data Visualization · Animation</div>
+                    </div>
+                </div>
 
-<!--             <div class="full-length">
-                2022
-            </div> -->
+                <div class="thumbnails frame" data-id="Paradise" style="left:20px; top:20px;">
+                    <img src="./assets/InterfaceImage.gif" alt="Rebuilding Paradise">
+                    <div class="caption">
+                    <div class="title">Rebuilding Paradise</div>
+                    <div class="tags">Design Studio · Data Visualization · Animation</div>
+                    </div>
+                </div>
+                
+                </section>
             
             <div class="thumbnails ">
-                Rebuilding Paradise </br>
                 <img class="highlightDesign highlightDatavis highlightAnimation" id ="Paradise" src="./assets/InterfaceImage.gif">
+                 <div class="title">Rebuilding Paradise</div>
+                <div class="tags">Design Studio · Data Visualization · Animation</div>
             </div>
 
 <!--                 <div class="full-length"></br>
@@ -84,11 +107,6 @@
                         Refactoring Farming </br>
                         <img class=" highlightDesign highlightModelmaking" id ="Refactoring" src="./assets/Refactor.gif">
                     </div>  
-    
-<!--                     <div class="thumbnails highlightModelmaking">
-                        Fungi Picnic Bot </br>
-                        <img id ="Biokin" src="./assets/Desertscape_2.jpg">
-                    </div> -->
 
                     <div class="thumbnails ">
                         Model Fictions: Steroid Plants </br>
@@ -156,8 +174,8 @@
         </div>
 
 
-        <div class="flex-item-right">
-        </div>
+        <!-- <div class="flex-item-right">
+        </div> -->
 
         
             <!-- <iframe id= "GaslinkLink" class="displayImages" src="https://globalgaslink-bichummateyko.herokuapp.com/CoastalGaslink.html" allowtransparency="false" style="display: flex;" ></iframe>

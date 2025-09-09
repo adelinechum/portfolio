@@ -54,8 +54,8 @@
     
       /* Add a color to the active/current link */
       .topnav a.active {
-        background-color: grey;
-        color: white;
+        background-color: white;
+        color: grey;
         z-index: 2;
       }
     
@@ -64,12 +64,12 @@
       padding: 10px 20px;
       text-justify: auto;
       font-size: 24px;
-      color: white;
+      color: gray;
       font-weight: 300;
-      text-align: center;
+      text-align: left;
       justify-content: center;
       overflow: visible;
-      background-color: #333;
+      background-color: white;
       z-index: 2;
       width: 100%;
       position: fixed;
@@ -77,11 +77,10 @@
     
     /* Links inside the navbar */
     .navbar a {
-      
       float: right;
       font-size: 16px;
       font-weight: 300;
-      color: white;
+      color: grey;
       text-align: center;
       padding: 8px 10px;
       text-decoration: none;
@@ -164,7 +163,8 @@
       background-color: white;
       padding: 10px;
       flex: 60%;
-      margin-top: 50px;
+      margin-top: auto;
+      
       font-size: 24px;
     }
     
@@ -181,11 +181,26 @@
       }
     }
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: auto auto auto ;
-      gap: 20px;
-      padding: 20px;
+   /* Ensure project thumbnails have a visible border that can be recolored */
+.grid-container .thumbnails > img {
+  border: 6px solid white;    /* visible by default */
+  border-radius: 10px;        /* optional, looks nice */
+  transition: border-color .15s ease, opacity .15s ease;
+}
+
+    
+    .grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    align-content: start;
+    }
+    /* Ensure grid images are full-bleed and borderless */
+    .grid-container img{
+      max-width: 100% !important;
+      max-height: none;
+      border: 0 !important;
     }
 
     .full-length {
@@ -193,14 +208,64 @@
       text-align: left;
     }
 
-    .thumbnails {
-      font-size: 17px;
-      text-align: center;
+    /* container that holds floating frames */
+    #float-layer {
+      position: relative;
+      width: 100%;
+      min-height: 80vh;
     }
 
-    .thumbnails > img{
-      cursor: pointer;
+    /* turn each thumbnail into a floating frame */
+    .thumbnails.frame {
+      position: absolute;
+      width: clamp(220px, 26vw, 360px);
+      cursor: grab;
+      user-select: none;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+      padding: 10px;
     }
+    .thumbnails.frame:active { cursor: grabbing; }
+    .thumbnails.frame img { width: 100%; height: auto; border: 0; border-radius: 8px; }
+    .thumbnails.frame .caption { margin-top: 6px; }
+
+    /* Card container */
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .thumbnails img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .thumbnails img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .caption .title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .caption .tags {
+      font-size: 13px;
+      color: #666;
+      font-style: italic;
+    }
+
+
 
     .displayImages {
       position: fixed;
@@ -311,7 +376,12 @@
       display: flex;
     }
 
-    img{
+    /* img{
       max-width: 100%;
+    } */
+     img {
+      max-width: 80%;
+      max-height: 90%;
+      border-width: 10px; border-style: solid; border-color: white;
     }
 

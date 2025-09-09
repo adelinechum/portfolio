@@ -1,241 +1,204 @@
-// document.getElementsByClassName("thumbnails").addEventListener("click", openView, false)
-var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-document.getElementsByTagName('head')[0].appendChild(script);
+document.addEventListener('DOMContentLoaded', () => {
+  // --- 1) CLICK-TO-OPEN (vanilla) ------------------------------------------
+  const thumbEls = Array.from(document.getElementsByClassName('thumbnails'));
 
+  thumbEls.forEach(el => {
+    el.addEventListener('click', openView, false);
+  });
 
-//console.log(document.getElementsByClassName("thumbnails"));
+  function openView(e) {
+    // Find the IMG that has the id we switch on (handles clicks on captions, wrappers)
+    const img = e.target.tagName === 'IMG' ? e.target : e.currentTarget.querySelector('img[id]');
+    if (!img) return;
 
-const frames = Array.from(document.getElementsByClassName("thumbnails"));
-
-frames.forEach(element => {
-
-  element.addEventListener("click", openView, false)
-  
-});
-
-Array.from(document.getElementsByClassName("button")).forEach(e => e.addEventListener("click", highlight, false))
-
-function openView (parameter) {
-
-    var viewID = parameter.target.id
-    //console.log(parameter.target.id);
+    const viewID = img.id;
 
     switch (viewID) {
-
-      // case "Gaslink": 
-      //       var image = document.getElementById("GaslinkLink");
-      //       $('iframe').append();
-      //       image.style.display = 'flex';
-                
-      //   break;
-  
-      case "Flatten": 
-            // var image = document.getElementById("FlattenLink");
-            $('<iframe id= "FlattenLink" class="displayImages" src="https://centerforspatialresearch.github.io/summer2020_covidpolicies/"  allowtransparency="false" style="display: flex;" ></iframe>')
-            .appendTo('body');
-            //image.style.display = 'flex';
-
-      break;
-  
-      case "Paradise":    
-            // var image = document.getElementById("ParadiseLink");
-            $('<iframe id= "ParadiseLink" class="displayImages" src="https://adelinechum.github.io/rebuildingParadiseInterface/"  allowtransparency="false" style="display: flex;" ></iframe>')
-            .appendTo('body');
-            //image.style.display = 'flex';          
-  
-      break;
-  
-      case "SafeSpace":
-        // var image = document.getElementById("SafeSpaceLink");
-        $('<iframe id= "SafeSpaceLink" class="displayImages" src="./SafeSpace.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');
-        //image.style.display = 'flex';    
-
-      break;
-  
-      case "Housing":
-        // var image = document.getElementById("HousingLink");
-        $('<iframe id= "HousingLink" class="displayImages" src="https://adelinechum.github.io/36YearsOfHousing/"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');
-          
-
-      break;
-
-      case "Furniture":
-        // var image = document.getElementById("FurnitureLink");
-        $('<iframe id= "FurnitureLink" class="displayImages" src="./Furniture.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body'); 
-
-      break;
-  
-      case "Care":
-        // var image = document.getElementById("CareLink");
-        $('<iframe id= "CareLink" class="displayImages" src="./Care.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');
-
-      break;
-
-      case "Quilted":
-        // var image = document.getElementById("QuiltedLink");
-        $('<iframe id= "QuiltedLink" class="displayImages" src="./Quilt.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');    
-
-      break;
-
-      case "Pillow":
-        // var image = document.getElementById("PillowLink");
-        $('<iframe id= "PillowLink" class="displayImages" src="./Pillow.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');    
-
-      break;
-
-      case "SteroidPlants":
-        // var image = document.getElementById("SteroidPlantsLink");
-        $('<iframe id= "SteroidPlantsLink" class="displayImages" src="./SteroidPlants.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');    
-
-      break;
-
-      case "MoMa":
-        // var image = document.getElementById("MoMaLink");
-        $('<iframe id= "MoMaLink" class="displayImages" src="./Moma.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');    
-
-      break;
-
-      case "Refactoring":
-        // var image = document.getElementById("RefactoringLink");
-        $('<iframe id= "RefactoringLink" class="displayImages" src="./Refactoring.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');   
-
-      break;
-
-      case "Desert":
-        // var image = document.getElementById("DesertLink");
-        $('<iframe id= "DesertLink" class="displayImages" src="./Desert.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');   
-
-      break;
-
-      case "Wetlands":
-        // var image = document.getElementById("WetlandsLink");
-        $('<iframe id= "WetlandsLink" class="displayImages" src="./Wetlands.html"  allowtransparency="false" style="display: flex;" ></iframe>')
-        .appendTo('body');    
-
-      break;
-    
+      case 'Flatten':
+        addIframe('FlattenLink', 'https://centerforspatialresearch.github.io/summer2020_covidpolicies/');
+        break;
+      case 'Paradise':
+        addIframe('ParadiseLink', 'https://adelinechum.github.io/rebuildingParadiseInterface/');
+        break;
+      case 'SafeSpace':
+        addIframe('SafeSpaceLink', './SafeSpace.html');
+        break;
+      case 'Housing':
+        addIframe('HousingLink', 'https://adelinechum.github.io/36YearsOfHousing/');
+        break;
+      case 'Furniture':
+        addIframe('FurnitureLink', './Furniture.html');
+        break;
+      case 'Care':
+        addIframe('CareLink', './Care.html');
+        break;
+      case 'Quilted':
+        addIframe('QuiltedLink', './Quilt.html');
+        break;
+      case 'Pillow':
+        addIframe('PillowLink', './Pillow.html');
+        break;
+      case 'SteroidPlants':
+        addIframe('SteroidPlantsLink', './SteroidPlants.html');
+        break;
+      case 'MoMa':
+        addIframe('MoMaLink', './Moma.html');
+        break;
+      case 'Refactoring':
+        addIframe('RefactoringLink', './Refactoring.html');
+        break;
+      case 'Desert':
+        addIframe('DesertLink', './Desert.html');
+        break;
+      case 'Wetlands':
+        addIframe('WetlandsLink', './Wetlands.html');
+        break;
+      default:
+        return;
     }
   }
 
-    //escape image
-    document.body.addEventListener( 'keydown', function (e) { 
-      if (e.key == "Escape") {
-        $('iframe').remove()
-       // console.log(document.getElementsByClassName("displayImages"))
-        // Array.from(document.getElementsByClassName("displayImages")).forEach(function (e) {
-        //   // e.style.display = 'none';
-        // })
-      }
-    } );
-
-
-function unhighlightAll() {
-  $('.highlightDatavis').css("border-color" , "white");
-  $('.highlightDesign').css("border-color" , "white");
-  $('.highlightModelmaking').css("border-color" , "white");
-  $('.highlightAnimation').css("border-color" , "white");
-  $('.highlightExhibit').css("border-color" , "white");
-  // $('.highlightDoc').css("background-color" , "white");
-  $('.highlightDatavis').css("opacity" , "100%");
-  $('.highlightDesign').css("opacity" , "100%");
-  $('.highlightModelmaking').css("opacity" , "100%");
-  $('.highlightAnimation').css("opacity" , "100%");
-  $('.highlightExhibit').css("opacity" , "100%");
-  $('.highlightViz').css("opacity" , "100%");
-}
-
-
-function highlight(e) {
-  const key = e.target.id;
-  //console.log(e.target);
-  unhighlightAll();
-  switch (key) {
-    case 'datavis':
-      $('.highlightDatavis').css("border-color" , "lime");
-      $('.highlightDesign').css("opacity" , "60%");
-      $('.highlightModelmaking').css("opacity" , "60%");
-      $('.highlightAnimation').css("opacity" , "60%");
-      $('.highlightExhibit').css("opacity" , "60%");
-      $('.highlightViz').css("opacity" , "60%");
-      $('.highlightDatavis').css("opacity" , "100%");
-      break;
-
-    case 'designstudio':
-      $('.highlightDesign').css("border-color" , "#ff00f7");
-      $('.highlightModelmaking').css("opacity" , "60%");
-      $('.highlightAnimation').css("opacity" , "60%");
-      $('.highlightExhibit').css("opacity" , "60%");
-      $('.highlightViz').css("opacity" , "60%");
-      $('.highlightDatavis').css("opacity" , "60%");
-      $('.highlightDesign').css("opacity" , "100%");
-      break;
-
-    case 'modelmaking':
-      $('.highlightModelmaking').css("border-color" , "#bfff00");
-      $('.highlightAnimation').css("opacity" , "60%");
-      $('.highlightExhibit').css("opacity" , "60%");
-      $('.highlightViz').css("opacity" , "60%");
-      $('.highlightDatavis').css("opacity" , "60%");
-      $('.highlightDesign').css("opacity" , "60%");
-      $('.highlightModelmaking').css("opacity" , "100%");
-      break;
-  
-    case 'animation':
-      $('.highlightAnimation').css("border-color" , "aqua");
-      $('.highlightExhibit').css("opacity" , "60%");
-      $('.highlightViz').css("opacity" , "60%");
-      $('.highlightDatavis').css("opacity" , "60%");
-      $('.highlightDesign').css("opacity" , "60%");
-      $('.highlightModelmaking').css("opacity" , "60%");
-      $('.highlightAnimation').css("opacity" , "100%");
-      break;
-
-    case 'exhibit':
-      $('.highlightExhibit').css("border-color" , "#ff6a00");
-
-      $('.highlightViz').css("opacity" , "60%");
-      $('.highlightDatavis').css("opacity" , "60%");
-      $('.highlightDesign').css("opacity" , "60%");
-      $('.highlightModelmaking').css("opacity" , "60%");
-      $('.highlightAnimation').css("opacity" , "60%");
-      $('.highlightExhibit').css("opacity" , "100%");
-      break;
-    
-    // case 'doc':
-    //   $('.highlightDoc').css("border-color" , "#d000ff");
-    //   $('.highlightViz').css("opacity" , "60%");
-    //   $('.highlightDatavis').css("opacity" , "60%");
-    //   $('.highlightDesign').css("opacity" , "60%");
-    //   $('.highlightModelmaking').css("opacity" , "60%");
-    //   $('.highlightAnimation').css("opacity" , "60%");
-    //   $('.highlightExhibit').css("opacity" , "100%");
-    //   break;
-
-    default:
-      break;
+  function addIframe(id, src) {
+    // Remove any existing viewer first
+    document.querySelectorAll('iframe.displayImages').forEach(n => n.remove());
+    const iframe = document.createElement('iframe');
+    iframe.id = id;
+    iframe.className = 'displayImages';
+    iframe.src = src;
+    iframe.allowTransparency = 'false';
+    iframe.style.display = 'flex';
+    document.body.appendChild(iframe);
   }
-}
 
+  // Esc to close viewer
+  document.body.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('iframe.displayImages').forEach(n => n.remove());
+    }
+  });
 
-$('.button').on("click", function() {
-  $('.button').not(this).removeClass('active');
-  $(this).toggleClass('active');
-})
+  // --- 2) THEME HIGHLIGHTING (jQuery), load safely --------------------------
+  // If you truly need jQuery here, wait for it to be loaded before using it.
+  const jqScript = document.createElement('script');
+  jqScript.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+  jqScript.onload = () => {
+    // Your existing handlers after jQuery is ready
+    Array.from(document.getElementsByClassName('button')).forEach(el =>
+      el.addEventListener('click', highlight, false)
+    );
 
-// $('.button').click(function() {
+    function unhighlightAll() {
+      $('.highlightDatavis, .highlightDesign, .highlightModelmaking, .highlightAnimation, .highlightExhibit, .highlightViz')
+        .css({ opacity: '100%', 'border-color': 'white' });
+    }
 
-//   $("*").toggleClass('')
-//   $(this).toggleClass('active');
+    function highlight(e) {
+      const key = e.target.id;
+      unhighlightAll();
+      switch (key) {
+        case 'datavis':
+          $('.highlightDatavis').css('border-color', 'lime');
+          $('.highlightDesign, .highlightModelmaking, .highlightAnimation, .highlightExhibit, .highlightViz').css('opacity', '60%');
+          break;
+        case 'designstudio':
+          $('.highlightDesign').css('border-color', '#ff00f7');
+          $('.highlightModelmaking, .highlightAnimation, .highlightExhibit, .highlightViz, .highlightDatavis').css('opacity', '60%');
+          break;
+        case 'modelmaking':
+          $('.highlightModelmaking').css('border-color', '#bfff00');
+          $('.highlightAnimation, .highlightExhibit, .highlightViz, .highlightDatavis, .highlightDesign').css('opacity', '60%');
+          break;
+        case 'animation':
+          $('.highlightAnimation').css('border-color', 'aqua');
+          $('.highlightExhibit, .highlightViz, .highlightDatavis, .highlightDesign, .highlightModelmaking').css('opacity', '60%');
+          break;
+        case 'exhibit':
+          $('.highlightExhibit').css('border-color', '#ff6a00');
+          $('.highlightViz, .highlightDatavis, .highlightDesign, .highlightModelmaking, .highlightAnimation').css('opacity', '60%');
+          break;
+        default:
+          break;
+      }
+      // Toggle active class on the clicked button
+      $('.button').not(e.target).removeClass('active');
+      $(e.target).toggleClass('active');
+    }
+  };
+  document.head.appendChild(jqScript);
 
-// });
+  // --- 3) FREE-FLOATING DRAGGABLE FRAMES (vanilla) --------------------------
+  // Make sure you have: <section id="float-layer"> ... <div class="thumbnails frame" data-id="Paradise">...</div> ... </section>
+  const layer = document.getElementById('float-layer');
+  if (layer) {
+    const dragEls = Array.from(layer.querySelectorAll('.thumbnails.frame'));
+
+    restorePositions();
+
+    let active = null, startX = 0, startY = 0, origX = 0, origY = 0;
+
+    dragEls.forEach(f => {
+      f.addEventListener('pointerdown', (e) => {
+        active = f;
+        f.setPointerCapture(e.pointerId);
+        startX = e.clientX;
+        startY = e.clientY;
+        const r = f.getBoundingClientRect();
+        const lr = layer.getBoundingClientRect();
+        origX = r.left - lr.left;
+        origY = r.top - lr.top;
+        f.style.zIndex = String(Date.now()); // bring to front
+      });
+      f.addEventListener('pointermove', (e) => {
+        if (!active) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        const nx = Math.max(0, Math.min(origX + dx, layer.clientWidth - active.offsetWidth));
+        const ny = Math.max(0, Math.min(origY + dy, layer.clientHeight - active.offsetHeight));
+        active.style.left = nx + 'px';
+        active.style.top  = ny + 'px';
+      });
+      f.addEventListener('pointerup', (e) => {
+        if (!active) return;
+        savePosition(active);
+        active.releasePointerCapture(e.pointerId);
+        active = null;
+      });
+    });
+
+    autoPackIfNeeded();
+
+    function savePosition(el){
+      const key = 'framePos:' + (el.dataset.id || el.id);
+      localStorage.setItem(key, JSON.stringify({ left: el.style.left, top: el.style.top }));
+    }
+
+    function restorePositions(){
+      dragEls.forEach(el => {
+        const key = 'framePos:' + (el.dataset.id || el.id);
+        const saved = JSON.parse(localStorage.getItem(key) || 'null');
+        if (saved) {
+          el.style.left = saved.left;
+          el.style.top  = saved.top;
+        }
+      });
+    }
+
+    function autoPackIfNeeded(){
+      const anySaved = dragEls.some(el => localStorage.getItem('framePos:' + (el.dataset.id || el.id)));
+      if (anySaved) return;
+      let x = 16, y = 16, rowH = 0;
+      const pad = 16;
+      dragEls.forEach(el => {
+        el.style.left = x + 'px';
+        el.style.top  = y + 'px';
+        const w = el.offsetWidth || 320;
+        const h = el.offsetHeight || 260;
+        x += (w + pad);
+        rowH = Math.max(rowH, h);
+        if (x + w > layer.clientWidth){
+          x = 16; y += (rowH + pad); rowH = 0;
+        }
+      });
+    }
+  }
+});
