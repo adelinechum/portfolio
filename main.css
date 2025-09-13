@@ -7,6 +7,7 @@
         height: 100%;
         width: 100%;
         font-family: 'Roboto', sans-serif;
+        background-color: rgb(222, 222, 222);
       }
     
       #aboutPage {
@@ -160,11 +161,7 @@
       font-size: 24px;
     }
     .flex-item-center {
-      background-color: white;
-      padding: 10px;
-      flex: 60%;
       margin-top: auto;
-      
       font-size: 24px;
     }
     
@@ -181,26 +178,18 @@
       }
     }
 
-   /* Ensure project thumbnails have a visible border that can be recolored */
-.grid-container .thumbnails > img {
-  border: 6px solid white;    /* visible by default */
-  border-radius: 10px;        /* optional, looks nice */
-  transition: border-color .15s ease, opacity .15s ease;
-}
+    /* Ensure project thumbnails have a visible border that can be recolored */
+    .grid-container .thumbnails > img {
+      border: 6px solid white;    /* visible by default */
+      border-radius: 10px;        /* optional, looks nice */
+      transition: border-color .15s ease, opacity .15s ease;
+    }
 
     
-    .grid-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    align-content: start;
-    }
-    /* Ensure grid images are full-bleed and borderless */
-    .grid-container img{
-      max-width: 100% !important;
-      max-height: none;
-      border: 0 !important;
+   /* Not a grid anymore */
+    .grid-container { 
+      display: block;       /* or remove grid props entirely */
+      padding: 20px;
     }
 
     .full-length {
@@ -213,6 +202,7 @@
       position: relative;
       width: 100%;
       min-height: 80vh;
+      margin-top: 100px;
     }
 
     /* turn each thumbnail into a floating frame */
@@ -227,7 +217,6 @@
       padding: 10px;
     }
     .thumbnails.frame:active { cursor: grabbing; }
-    .thumbnails.frame img { width: 100%; height: auto; border: 0; border-radius: 8px; }
     .thumbnails.frame .caption { margin-top: 6px; }
 
     /* Card container */
@@ -237,16 +226,6 @@
       gap: 8px;
       text-align: left;
       font-size: 15px;
-    }
-
-    .thumbnails img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 0;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform .12s ease, box-shadow .12s ease;
     }
 
     .thumbnails img:hover {
@@ -306,13 +285,19 @@
       background-color: lime; 
       border: none;
       color: white;
-      padding: 10px 20px;
+      padding: 15px 10px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 17px;
-      margin: 4px 2px;
+      font-size: 15px;
+      margin: 2px 2px;
       cursor: pointer;
+    }
+
+     .button0 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid grey;
     }
     
     .button1 {
@@ -376,12 +361,12 @@
       display: flex;
     }
 
-    /* img{
-      max-width: 100%;
-    } */
-     img {
+    /* img {
       max-width: 80%;
       max-height: 90%;
-      border-width: 10px; border-style: solid; border-color: white;
-    }
+      border-radius: 0px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: white;
+    } */
 
