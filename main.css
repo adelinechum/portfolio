@@ -7,7 +7,9 @@
         height: 100%;
         width: 100%;
         font-family: 'Roboto', sans-serif;
-        background-color: rgb(222, 222, 222);
+        background-image: url(assets/background.jpg);
+        /* background-repeat: no-repeat; */
+        background-size: cover;
       }
     
       #aboutPage {
@@ -24,41 +26,7 @@
         margin-left: 25px;
         margin-right: 25px;
       }
-    
-      /* Add a black background color to the top navigation */
-      .topnav {
-        background-color: #ddd;
-        overflow: hidden;
-        position: absolute;
-        z-index: 2;
-        position: fixed;
-      }
-    
-      /* Style the links inside the navigation bar */
-      .topnav a {
-        position:absolute;
-        float: right;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        z-index: 1000;
-      }
-    
-      /* Change the color of links on hover */
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-        z-index: 2;
-      }
-    
-      /* Add a color to the active/current link */
-      .topnav a.active {
-        background-color: white;
-        color: grey;
-        z-index: 2;
-      }
+  
     
        /* Navbar container */
     .navbar {
@@ -70,23 +38,27 @@
       text-align: left;
       justify-content: center;
       overflow: visible;
-      background-color: white;
+      background-color: #ffffff14;
       z-index: 2;
       width: 100%;
       position: fixed;
+      align-content: center;
     }
     
     /* Links inside the navbar */
     .navbar a {
       float: right;
-      font-size: 16px;
-      font-weight: 300;
-      color: grey;
+      /* font-size: 16px; */
+      font-weight: 400;
+      color: rgb(213, 255, 151);
+      background-color: rgba(255, 255, 255, 0.053);
       text-align: center;
       padding: 8px 10px;
       text-decoration: none;
       z-index: 2;
       translate: -50%;
+      border-radius: 10px;
+      
     }
     
     /* The dropdown container */
@@ -109,7 +81,8 @@
     
     /* Add a red background color to navbar links on hover */
     .navbar a:hover, .dropdown:hover .dropbtn {
-      background-color: yellow;
+      background-color: rgba(213, 255, 151, 0.831);
+      color: white;
     }
     
     /* Dropdown content (hidden by default) */
@@ -181,7 +154,7 @@
     /* Ensure project thumbnails have a visible border that can be recolored */
     .grid-container .thumbnails > img {
       border: 6px solid white;    /* visible by default */
-      border-radius: 10px;        /* optional, looks nice */
+      border-radius: 10px;      
       transition: border-color .15s ease, opacity .15s ease;
     }
 
@@ -189,7 +162,8 @@
    /* Not a grid anymore */
     .grid-container { 
       display: block;       /* or remove grid props entirely */
-      padding: 20px;
+      padding: 30px;
+      max-height: 100vh;
     }
 
     .full-length {
@@ -201,22 +175,22 @@
     #float-layer {
       position: relative;
       width: 100%;
-      min-height: 80vh;
+      min-height: 200vh;
       margin-top: 100px;
     }
 
     /* turn each thumbnail into a floating frame */
     .thumbnails.frame {
       position: absolute;
-      width: clamp(220px, 26vw, 360px);
-      cursor: grab;
+      width: clamp(520px, 226vw, 560px);
+      cursor: move;
       user-select: none;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+      border-radius: 10px;
+      /* box-shadow: 0 12px 30px rgba(0,0,0,.12); */
+      opacity: 95%;
       padding: 10px;
     }
-    .thumbnails.frame:active { cursor: grabbing; }
+    .thumbnails.frame:active { cursor: move; }
     .thumbnails.frame .caption { margin-top: 6px; }
 
     /* Card container */
@@ -231,16 +205,19 @@
     .thumbnails img:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      opacity: 99%;
+      cursor: pointer;
     }
 
     .caption .title {
+      color:#f9f9f9;
       font-weight: 600;
       margin-bottom: 2px;
     }
 
     .caption .tags {
       font-size: 13px;
-      color: #666;
+      color: #b3b3b3;
       font-style: italic;
     }
 
@@ -292,6 +269,7 @@
       font-size: 15px;
       margin: 2px 2px;
       cursor: pointer;
+      border-radius: 0px;
     }
 
      .button0 {
