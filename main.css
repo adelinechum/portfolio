@@ -1,351 +1,174 @@
 :root{
-    --text-left-1: 50px;
-    }
-    
-    html, body {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      font-family: 'Roboto', sans-serif;
-      background-image: url(assets/base-tall.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-    }
-    
-      #aboutPage {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        margin-top: 0px;
-      }
-    
-      #aboutText{
-        color: black;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        margin-left: 25px;
-        margin-right: 25px;
-      }
-  
-    
-       /* Navbar container */
-    .navbar {
-      padding: 10px 20px;
-      text-justify: auto;
-      font-size: 24px;
-      color: gray;
-      font-weight: 300;
-      text-align: left;
-      justify-content: center;
-      overflow: visible;
-      background-color: #ffffff14;
-      z-index: 2;
-      width: 100%;
-      position: fixed;
-      align-content: center;
-    }
-    
-    /* Links inside the navbar */
-    .navbar a {
-      float: right;
-      /* font-size: 16px; */
-      font-weight: 400;
-      color: rgb(213, 255, 151);
-      background-color: rgba(255, 255, 255, 0.053);
-      text-align: center;
-      padding: 8px 10px;
-      text-decoration: none;
-      z-index: 2;
-      translate: -50%;
-      border-radius: 10px;
-      
-    }
-    
-    /* The dropdown container */
-    .dropdown {
-      float: left;
-      overflow: hidden;
-    }
-    
-    /* Dropdown button */
-    .dropdown .dropbtn {
-      font-size: 16px;
-      border: none;
-      outline: none;
-      color: white;
-      padding: 14px 16px;
-      background-color: inherit;
-      font-family: inherit; /* Important for vertical align on mobile phones */
-      margin: 0; /* Important for vertical align on mobile phones */
-    }
-    
-    /* Add a red background color to navbar links on hover */
-    .navbar a:hover, .dropdown:hover .dropbtn {
-      background-color: rgba(213, 255, 151, 0.831);
-      color: white;
-    }
-    
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 2;
-    }
-    
-    /* Links inside the dropdown */
-    .dropdown-content a {
-      float: none;
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-    }
-    
-    /* Add a grey background color to dropdown links on hover */
-    .dropdown-content a:hover {
-      background-color: #ddd;
-      z-index: 2;
-    }
-    
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-      display: block;
-      z-index: 2;
-    } 
+  --thumb-border: 6px;
+  --btn-radius: 0px;
+}
 
-    .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-      font-size: 24px;
-      flex-direction: row;
-      margin-top: auto;
-    }
-    
-    .flex-item-left {
-      padding: 10px;
-      flex: 12%;
-      margin-top: 30px;
-      margin-left: 3%;
-      text-align: left;
-      font-size: 24px;
-    }
-    .flex-item-center {
-      margin-top: auto;
-      font-size: 24px;
-    }
-    
-    .flex-item-right {
-      padding: 10px;
-      flex: 15%;
-      margin-top: 50px;
-    }
-    
-    /* Responsive layout - makes a one column-layout instead of a two-column layout */
-    @media (max-width: 800px) {
-      .flex-item-left, .flex-item-center {
-        flex: 100%;
-      }
-    }
+/* Background */
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: center / cover no-repeat fixed url(assets/base-tall.jpg);
+  overflow: hidden;
+}
 
-    /* Ensure project thumbnails have a visible border that can be recolored */
-    .grid-container .thumbnails > img {
-      border: 6px solid white;    /* visible by default */
-      border-radius: 10px;      
-      transition: border-color .15s ease, opacity .15s ease;
-    }
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: gray;
+  font-weight: 300;
+  text-align: left;
+  background-color: #ffffff14;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-    
-   /* Not a grid anymore */
-    .grid-container { 
-      display: block;       /* or remove grid props entirely */
-      padding: 30px;
-      max-height: 100vh;
-    }
+.navbar .aboutLink {
+  margin-left: auto;
+  font-weight: 400;
+  color: rgb(213, 255, 151);
+  background-color: rgba(255, 255, 255, 0.053);
+  padding: 8px 10px;
+  text-decoration: none;
+  border-radius: 10px;
+}
 
-    .full-length {
-      grid-column: 1 / 4;
-      text-align: left;
-    }
+/* Buttons (shared base) */
+.button {
+  --accent: grey;
+  background: white; 
+  color: black; 
+  border: 2px solid var(--accent);
+  padding: 12px 10px;
+  font-size: 14px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: var(--btn-radius);
+}
+.button:hover,
+.button:active,
+.button.active {
+  background: var(--accent);
+  color: white;
+}
+.button0 { --accent: grey; }
+.button1 { --accent: lime; }
+.button2 { --accent: #ff00f7; }
+.button3 { --accent: #bfff00; }
+.button4 { --accent: aqua; }
+.button5 { --accent: #ff6a00; }
+.button6 { --accent: #d000ff; }
 
-    /* container that holds floating frames */
-    #float-layer {
-      position: relative;
-      width: 100%;
-      min-height: 200vh;
-      margin-top: 100px;
-    }
+/* Stage container — perspective */
+.grid-container {
+  padding: 50px;
+  max-height: 500vh;
+  max-width: 200vh;
+  perspective: 200px;
+  perspective-origin: 50% 50%;
+  overflow: hidden
+}
 
-    /* turn each thumbnail into a floating frame */
-    .thumbnails.frame {
-      position: absolute;
-      width: clamp(520px, 226vw, 560px);
-      cursor: move;
-      user-select: none;
-      border-radius: 10px;
-      opacity: 95%;
-      padding: 10px;
-    }
-    .thumbnails.frame:active { cursor: move; }
-    .thumbnails.frame .caption { margin-top: 6px; }
+/* Floating layer (3D plane) */
+#float-layer {
+  transform-origin: 0 0; 
+  position: relative;
+  width: 200%;
+  max-height: 90vh;
+  margin-top: 100px; /* clear navbar */
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+  transform-origin: top center;
+}
 
-    /* Card container */
-    .thumbnails {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      text-align: left;
-      font-size: 15px;
-    }
+/* Cards */
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  font-size: 15px;
+}
 
-    .thumbnails img:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      opacity: 99%;
-      cursor: pointer;
-    }
+.thumbnails.frame {
+  position: absolute;
+  width: clamp(520px, 226vw, 560px);
+  cursor: move;
+  user-select: none;
+  border-radius: 10px;
+  opacity: 0.95;
+  padding: 10px;
 
-    .caption .title {
-      color:#f9f9f9;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
+  /* 3D depth variable & animation */
+  --z: 0px;
+  transform: translateZ(var(--z));
+  transition: transform .28s ease, opacity .18s ease, filter .18s ease;
+  will-change: transform;
+}
 
-    .caption .tags {
-      font-size: 13px;
-      color: #b3b3b3;
-      font-style: italic;
-    }
+.thumbnails.frame.is-front {
+  transform: translateZ(var(--z)) scale(1.02);
+}
 
+.grid-container .thumbnails > img {
+  border: var(--thumb-border) solid white;
+  border-radius: 10px;
+  transition: border-color .15s ease, opacity .15s ease, transform .15s ease, box-shadow .15s ease;
+}
 
+.thumbnails img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  opacity: 0.99;
+  cursor: pointer;
+}
 
-    .displayImages {
-      position: fixed;
-      justify-content: center;
-      overflow: hidden;
-     
-    }
-    
-    img {
-      max-width: 80%;
-      max-height: 90%;
-      border-radius: 0px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: white;
-      opacity: 100%;
-    }
+/* Captions built from data-* */
+.caption .title {
+  color:#f9f9f9;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.caption .year { 
+  font-weight: 400; 
+  color: #b3b3b3; 
+  margin-left: 4px; 
+}
+.taglist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 4px 0 0;
+}
+.taglist .tag {
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 1px solid #555;
+  border-radius: 999px;
+  color: #ddd;
+  background: rgba(255,255,255,0.05);
+}
 
-    iframe {
-      margin-top: auto;
-      position: absolute;
-      min-width: 65% ;
-      min-height: 80% ;
-      display: contents;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 80%;
-      max-height: 80%;
-      box-sizing: inherit;
-      opacity: 100%;
-      background: white;
-      outline-color: #333;
-      outline-style: solid;
-    }
+/* Fullscreen overlay for project links */
+.displayImages {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+  z-index: 9999;
+}
 
-    .button {
-      background-color: lime; 
-      border: none;
-      color: white;
-      padding: 15px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 15px;
-      margin: 2px 2px;
-      cursor: pointer;
-      border-radius: 0px;
-    }
-
-     .button0 {
-      background-color: white; 
-      color: black; 
-      border: 2px solid grey;
-    }
-    
-    .button1 {
-      background-color: white; 
-      color: black; 
-      border: 2px solid lime; /* Datavis */
-    }
-
-    .button1:hover {background-color: lime;}
-    .button1:active, .button1.active {background-color: lime;}
-    
-    .button2 {
-      background-color: white; 
-      color: black; 
-      border: 2px solid #ff00f7; /* designstudio */
-    }
-
-    .button2:hover {background-color: #ff00f7;}
-    .button2:active, .button2.active {background-color: #ff00f7;}   
-    
-    .button3 {
-      background-color: white; 
-      color: black; 
-      border: 2px solid #bfff00; /* modelmaking */
-    }
-
-    .button3:hover {background-color: #bfff00;}    
-    .button3:active, .button3.active {background-color: #bfff00;}    
-    
-    .button4 {
-      background-color: white;
-      color: black;
-      border: 2px solid aqua; /* animation */
-    }
-
-    .button4:hover {background-color: aqua;} 
-    .button4:active, .button4.active {background-color: aqua;}         
-    
-    .button5 {
-      background-color: white;
-      color: black;
-      border: 2px solid #ff6a00; /* exhibit */
-    }
-
-    .button5:hover {background-color: #ff6a00;}
-    .button5:active, .button5.active {background-color: #ff6a00;}  
-
-    .button6 {
-      background-color: white;
-      color: black;
-      border: 2px solid #d000ff; /* doc */
-    }
-
-    .button6:hover {background-color: #d000ff;}
-    .button6:active, .button6.active {background-color: #d000ff;}  
-
-    .fullSize{
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
-
-    /* img {
-      max-width: 80%;
-      max-height: 90%;
-      border-radius: 0px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: white;
-    } */
-
+/* Relax global img defaults (borders are per thumbnail) */
+img { border: 0; border-radius: 0; max-width: 80%; max-height: 90%; }

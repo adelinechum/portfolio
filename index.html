@@ -1,266 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="./main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-</head>
+  <meta charset="utf-8" />
+  <title>Adeline Chum — Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./main.css">
+</head>
 <body>
 
-    <script>
-        
-    </script>
+  <div class="navbar">
+    <button id="datavis"      class="button button1">Data Visualization</button>
+    <button id="designstudio" class="button button2">Design</button>
+    <button id="modelmaking"  class="button button3">Models</button>
+    <button id="animation"    class="button button4">Animation</button>
+    <button id="exhibit"      class="button button5">Exhibits</button>
+    <button id="pattern"      class="button button6">Patterns</button>
 
-    <div class="navbar">
+    <button id="resetLayout" class="button button0">Reset</button>
+    <a class="aboutLink" href="./about.html">ADELINE CHUM info</a>
+  </div>
 
-            <button id="all" class="button button0">
-                All
-            </button>
+  <div class="grid-container">
+    <section id="float-layer">
+      <!-- EXAMPLE CARDS (use data- attributes; captions are auto-rendered by JS) -->
 
-            <button id="datavis" class="button button1">
-                Data Visualization
-            </button>
+      <div class="thumbnails frame"
+           data-id="Paradise"
+           data-title="Rebuilding Paradise"
+           data-year="2021"
+           data-tags="designstudio,datavis,animation">
+        <img src="./assets/InterfaceImage.gif" alt="Rebuilding Paradise" id="Paradise">
+        <div class="caption"></div>
+      </div>
 
-            <button id="designstudio" class="button button2">
-                Design
-            </button>
+      <div class="thumbnails frame"
+           data-id="Refactoring"
+           data-title="Refactoring Farming"
+           data-year="2021"
+           data-tags="designstudio,modelmaking,animation">
+        <img src="./assets/Refactor.gif" alt="Refactoring" id="Refactoring">
+        <div class="caption"></div>
+      </div>
 
-            <button id="modelmaking" class="button button3">
-                Models
-            </button>
+      <div class="thumbnails frame"
+           data-id="SteroidPlants"
+           data-title="Model Fictions: Steroid Plants"
+           data-year="2020"
+           data-tags="animation,modelmaking">
+        <img src="./assets/SteroidPlantCropped.gif" alt="Steroid Plants" id="SteroidPlants">
+        <div class="caption"></div>
+      </div>
 
-            <button id="animation" class="button button4">
-                Animation
-            </button>
+      <div class="thumbnails frame"
+           data-id="Housing"
+           data-title="36 Years of Housing"
+           data-year="2020"
+           data-tags="datavis,exhibit">
+        <img src="./assets/Housing.gif" alt="Housing" id="Housing">
+        <div class="caption"></div>
+      </div>
 
-            <button id="exhibit" class="button button5">
-                Exhibits
-            </button>
+      <div class="thumbnails frame"
+           data-id="SafeSpace"
+           data-title="Safe Space"
+           data-year="2020"
+           data-tags="designstudio,animation">
+        <img src="./assets/SafeSpace.jpg" alt="Safe Space" id="SafeSpace">
+        <div class="caption"></div>
+      </div>
 
-            <button id="pattern" class="button button6">
-                Patterns
-            </button>
+      <div class="thumbnails frame"
+           data-id="Flatten"
+           data-title="Flatten the Curve"
+           data-year="2020"
+           data-tags="datavis">
+        <img src="./assets/Fingerprint.gif" alt="Flatten the Curve" id="Flatten">
+        <div class="caption"></div>
+      </div>
 
-            <button id="resetLayout">&#10227</button>
-<!-- 
-            <button id="docu" class="button button6">
-                Documentation
-            </button> -->
-            <a href="./about.html"> ADELINE CHUM info</a>
-        </br>
+      <div class="thumbnails frame"
+           data-id="MoMa"
+           data-title="MoMA's Embodied Energy"
+           data-year="2019"
+           data-tags="datavis,animation,exhibit">
+        <img src="./assets/MoMa.gif" alt="MoMA" id="MoMa">
+        <div class="caption"></div>
+      </div>
 
-        </div>
+      <div class="thumbnails frame"
+           data-id="Care"
+           data-title="Units of Care"
+           data-year="2020"
+           data-tags="designstudio">
+        <img src="./assets/Care.jpg" alt="Care" id="Care">
+        <div class="caption"></div>
+      </div>
 
+      <div class="thumbnails frame"
+           data-id="Pillow"
+           data-title="Nestled Pillows"
+           data-year="2020"
+           data-tags="modelmaking">
+        <img src="./assets/Pillow.gif" alt="Pillow" id="Pillow">
+        <div class="caption"></div>
+      </div>
 
-        <!-- <div class="flex-item-center"> -->
-            <div class="grid-container">
-            
-                <section id="float-layer">
-             <!-- thuumbnails and links -->
-                <div class="thumbnails frame" 
-                data-id="Paradise"
-                data-year="2021" >
-                    <img src="./assets/InterfaceImage.gif" alt="Rebuilding Paradise" id ="Paradise" class="highlightDesign highlightDatavis highlightAnimation">
-                    <div class="caption">
-                    <div class="title">Rebuilding Paradise</div>
-                    <div class="tags">Design Studio · Data Visualization · Animation</div>
-                    </div>
-                </div>
+      <div class="thumbnails frame"
+           data-id="Wetlands"
+           data-title="The Wetlands School of Ecologies"
+           data-year="2020"
+           data-tags="designstudio,modelmaking">
+        <img src="./assets/Wetlands.jpg" alt="Wetlands" id="Wetlands">
+        <div class="caption"></div>
+      </div>
 
-                <div class="thumbnails frame" 
-                data-id="Refactoring"
-                data-year="2021" >
-                    <img 
-                        src="./assets/Refactor.gif" 
-                        alt="Refactoring" 
-                        id ="Refactoring" 
-                        class=" highlightDesign highlightModelmaking">
-                    <div class="caption">
-                        <div class="title">Refactoring Farming</div>
-                        <div class="tags">Design Studio · Models · Animation</div>
-                    </div>
-                </div>
+      <div class="thumbnails frame"
+           data-id="Gaslink"
+           data-title="Global GasLink"
+           data-year="2019"
+           data-tags="datavis">
+        <img src="./assets/Gaslink.jpg" alt="Gaslink" id="Gaslink">
+        <div class="caption"></div>
+      </div>
 
-                <div class="thumbnails frame" 
-                data-id="SteroidPlants"
-                data-year="2020" >
-                    <img 
-                        src="./assets/SteroidPlantCropped.gif" 
-                        alt="SteroidPlants" 
-                        id ="SteroidPlants" 
-                        class="highlightAnimation highlightModelmaking">
-                    <div class="caption">
-                        <div class="title">Model Fictions: Steroid Plants</div>
-                        <div class="tags">Models · Animation</div>
-                    </div>
-                </div>
+      <div class="thumbnails frame"
+           data-id="Quilted"
+           data-title="Quilted"
+           data-year="2019"
+           data-tags="designstudio,modelmaking">
+        <img src="./assets/Quilt.jpg" alt="Quilted" id="Quilted">
+        <div class="caption"></div>
+      </div>
 
-                <div class="thumbnails frame" 
-                data-id="Housing"
-                data-year="2020" >
-                    <img 
-                        src="./assets/Housing.gif"
-                        alt="Housing" 
-                        id ="Housing" 
-                        class="highlightDatavis highlightExhibit">
-                    <div class="caption">
-                        <div class="title">36 Years of Housing</div>
-                        <div class="tags">Data Visualization · Exhibit</div>
-                    </div>
-                </div>
+      <div class="thumbnails frame"
+           data-id="Furniture"
+           data-title="Furniture Manufacturing Headquarters"
+           data-year="2019"
+           data-tags="modelmaking,animation">
+        <img src="./assets/Furniture.gif" alt="Furniture" id="Furniture">
+        <div class="caption"></div>
+      </div>
 
-                <div class="thumbnails frame" 
-                data-id="SafeSpace"
-                data-year="2020" >
-                    <img 
-                        src="./assets/SafeSpace.jpg"
-                        alt="SafeSpace" 
-                        id ="SafeSpace" 
-                        class="highlightDesign highlightAnimation">
-                    <div class="caption">
-                        <div class="title">Safe Space</div>
-                        <div class="tags">Design Studio · Animation</div>
-                    </div>
-                </div>
+    </section>
+  </div>
 
-                <div class="thumbnails frame" 
-                    data-id="Flatten"
-                    data-year="2020" >
-                    <img 
-                        src="./assets/Fingerprint.gif"
-                        alt="Flatten" 
-                        id ="Flatten" 
-                        class="highlightDatavis">
-                    <div class="caption">
-                        <div class="title">Flatten the Curve</div>
-                        <div class="tags">Data Visualization</div>
-                    </div>
-                </div>
-
-                <div class="thumbnails frame" 
-                    data-id="MoMa"
-                    data-year="2019" >
-                    <img 
-                        src="./assets/MoMa.gif"
-                        alt="MoMa" 
-                        id ="MoMa" 
-                        class="highlightDatavis highlightAnimation highlightExhibit">
-                    <div class="caption">
-                        <div class="title">MoMa's Embodied Energy</div>
-                        <div class="tags">Data Visualization · Exhibit · Animation</div>
-                    </div>
-                </div>
-
-                <!-- <div class="thumbnails frame" data-id="Desert" style="left:20px; top:20px;" >
-                    <img 
-                        src="./assets/Desertscape_01.jpg"
-                        alt="Desert" 
-                        id ="Desert" 
-                        class="highlightViz">
-                    <div class="caption">
-                        <div class="title">Desert Oasis</div>
-                        <div class="tags">Visualization</div>
-                    </div>
-                </div> -->
-
-                <div class="thumbnails frame" 
-                    data-id="Care" 
-                    data-year="2020">
-                    <img 
-                        src="./assets/Care.jpg"
-                        alt="Care" 
-                        id ="Care" 
-                        class="highlightDesign">
-                    <div class="caption">
-                        <div class="title">Units of Care</div>
-                        <div class="tags">Design Studio</div>
-                    </div>
-                </div>
-
-                <div class="thumbnails frame" 
-                    data-id="Pillow"
-                    data-year="2020" >
-                    <img 
-                        src="./assets/Pillow.gif"
-                        alt="Pillow" 
-                        id ="Pillow" 
-                        class="highlightModelmaking">
-                    <div class="caption">
-                        <div class="title">Nestled Pillows</div>
-                        <div class="tags">Models</div>
-                    </div>
-                </div>
-
-                <div class="thumbnails frame" 
-                    data-id="Wetlands"
-                    data-year="2020">
-                    <img 
-                        src="./assets/Wetlands.jpg"
-                        alt="Wetlands" 
-                        id ="Wetlands" 
-                        class="highlightDesign highlightModelmaking">
-                    <div class="caption">
-                        <div class="title">The Wetlands School of Ecologies</div>
-                        <div class="tags">Design Studio · Models</div>
-                    </div>
-                </div>
-
-                <div class="thumbnails frame" 
-                data-id="Gaslink"
-                data-year="2019">
-                    <img 
-                        src="./assets/Gaslink.jpg"
-                        alt="Gaslink" 
-                        id ="Gaslink" 
-                        class="highlightDatavis">
-                    <div class="caption">
-                        <div class="title">Global GasLink</div>
-                        <div class="tags">Data Visualization</div>
-                    </div>
-                </div>
-
-                <div class="thumbnails frame" data-id="Quilted"
-                data-year="2019">
-                    <img 
-                        src="./assets/Quilt.jpg"
-                        alt="Quilted" 
-                        id ="Quilted" 
-                        class="highlightDesign highlightModelmaking">
-                    <div class="caption">
-                        <div class="title">Quilted</div>
-                        <div class="tags">Design Studio</div>
-                    </div>
-                </div>
-
-                <div class="thumbnails frame" 
-                    data-id="Furniture"
-                    data-year="2019" >
-                    <img 
-                        src="./assets/Furniture.gif"
-                        alt="Furniture" 
-                        id ="Furniture" 
-                        class="highlightModelmaking highlightAnimation">
-                    <div class="caption">
-                        <div class="title">Furniture Manufacturing Headquarters</div>
-                        <div class="tags">Models · Animation</div>
-                    </div>
-                </div>    
-           
-                </section>
-
-
-            </div>
-        
-    </div>
-
-
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
-
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="module" src="./app.js"></script>
-
 </html>
