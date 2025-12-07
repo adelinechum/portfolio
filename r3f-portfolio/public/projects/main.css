@@ -1,0 +1,65 @@
+:root{
+  --thumb-border: 6px;
+  --btn-radius: 0px;
+}
+
+/* Background */
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: monospace;
+  /* background: center / cover no-repeat fixed url(assets/base-tall.jpg); */
+  overflow: visible;
+}
+
+/* Full width images */
+.fullSize {
+  display: block;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.fullSize img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout with 20% text column on left, 80% image on right */
+.textImageLayout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.textColumn {
+  width: 20%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+}
+
+.imageColumn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.imageColumn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.title{
+  font-size: 36px;
+}

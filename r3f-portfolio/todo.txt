@@ -1,0 +1,12 @@
+
+- add title on button
+- update tags 
+- think about organize frames like timeline into distance
+- sorting of projects
+
+- csr projects added!
+- iframe pages working
+- fix search bar - not clickable
+- fix titles and captions
+- 
+- softer shadows
