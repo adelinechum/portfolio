@@ -5,7 +5,7 @@ import { OrbitControls, Environment, Billboard, useTexture } from '@react-three/
 import * as THREE from 'three'
 import Frame from './Frame.jsx'
 import TextFrame from './TextFrame.jsx'
-import GrassField from './GrassField.jsx'
+import InstancedGrassField from './grass/InstancedGrassField.jsx'
 
 // --------------------------------------------------------------------------
 // SPATIAL CONSTANTS (Biomes, Distance, Heights)
@@ -761,7 +761,7 @@ export default function Scene({ projects, highlighted, onOpen, activeTag, focusP
 
       {/* Grass field component - renders AFTER ground for proper layering */}
       {heightMapTexture && (
-        <GrassField heightMapTexture={heightMapTexture} />
+        <InstancedGrassField heightMapTexture={heightMapTexture} />
       )}
 
       {/* Edge Hover Drift (Now defined earlier in the file) */}
