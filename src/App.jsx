@@ -78,7 +78,7 @@ export default function App() {
         onClick={() => setOpen(o => !o)}
         title="About" 
       >
-        greetings!
+        welcome!
       </button>
           {open && (
             <div className="moon-dropdown" role="dialog">

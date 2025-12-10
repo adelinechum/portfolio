@@ -15,7 +15,7 @@ export default function Frame({
 
   // Base card styling
   const cardStyle = {
-    width: '2000px',
+    width: '2500px',
     height: '100%',
     borderRadius: '12px',
     overflow: 'visible',

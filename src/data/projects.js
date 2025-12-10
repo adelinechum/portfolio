@@ -45,9 +45,9 @@ const parseCSV = (csvText) => {
     const workType = clean(row[7])
 
     // DEBUG: Log one project to verify parsing
-    if (title.includes('Care')) {
-      console.log('UNITS OF CARE DEBUG:', { row, title, year, id, thumbnail, url, rowLength: row.length })
-    }
+    // if (title.includes('Care')) {
+    //   console.log('UNITS OF CARE DEBUG:', { row, title, year, id, thumbnail, url, rowLength: row.length })
+    // }
     
     // Generate ID
     // const id = title.toLowerCase().replace(/[^a-z0-9]/g, '-')

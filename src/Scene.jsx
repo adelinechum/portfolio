@@ -50,9 +50,14 @@ const TERRAIN_MAX_HEIGHT = 200 // MUST MATCH displacementScale in Ground (exagge
 const SEA_LEVEL = 0.05       // Normalized height threshold (0-1) for 'water'
 
 // Default camera view
+// const DEFAULT_VIEW = {
+//   pos: new THREE.Vector3(128.43009107433818, 45.78024724262386, -864.5800300573438),
+//   target: new THREE.Vector3(-166.68060974986514, 0, -127.56061427519958)
+// }
+
 const DEFAULT_VIEW = {
-  pos: new THREE.Vector3(128.43009107433818, 45.78024724262386, -864.5800300573438),
-  target: new THREE.Vector3(-166.68060974986514, 0, -127.56061427519958)
+  pos: new THREE.Vector3(51.71576006631756, 86.54579460696334, -922.3754110440516),
+  target: new THREE.Vector3(-271.9365697426206, 0, -155.26313781358206)
 }
 
 // ---------------------------------------------------------------------------
@@ -257,7 +262,7 @@ function CameraController({ activeTag, focusCenter, controlsRef, highlighted, te
   }
 
   useEffect(() => {
-    console.log('🎥 Camera Update Triggered - activeTag:', activeTag)
+    // console.log('🎥 Camera Update Triggered - activeTag:', activeTag)
 
     if (!controlsRef.current) {
       const { pos, target } = defaultView
